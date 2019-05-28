@@ -1,11 +1,22 @@
+#include<iostream>
+#include<windows.h>
+#include<math.h>
+#include<locale.h>
+#include<chrono>
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<unistd.h>
+
+using namespace std;
 void shellSort(int vetor[], int tam){
 
     int aux, j, cont=0;
 
-     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execução do codigo
+     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuÑ‡Ñƒo do codigo
 
     for (int gap = tam/2; gap > 0; gap /= 2){
-            cont++
+            cont++;
         for (int i = gap; i < tam; i += 1)
         {
             cont++;
@@ -19,5 +30,6 @@ void shellSort(int vetor[], int tam){
             cont++;
         }
     }
-     cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execução do codigo em segundos
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execuÃ§Ã£o do codigo
+    cout<< "tempo de execuÃ§Ã£o em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuÑ‡Ñƒo do codigo em segundos
 }
