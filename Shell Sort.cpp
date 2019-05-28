@@ -1,13 +1,3 @@
-#include<iostream>
-#include<windows.h>
-#include<math.h>
-#include<locale.h>
-#include<string.h>
-#include<stdlib.h>
-#include<stdio.h>
-
-using namespace std;
-
 void shellSort(int vetor[], int tam){
 
     int aux, j;
