@@ -28,6 +28,7 @@ int main()
 
     cout << "Gerando " << qtde << " n�meros.";
     cout << "Gerando " << qtde << " n�meros.";
+    cout << "Gerando " << qtde << " n�meros.";
 
     for (int i = 0; i < qtde; i++)
     {
