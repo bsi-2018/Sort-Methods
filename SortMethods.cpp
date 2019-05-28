@@ -20,9 +20,9 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    int *v, tam;
+    int *vetor, tam;
 
-    v = createVetor(tam);
+    vetor = createVetor(tam);
 
 
 
@@ -33,15 +33,15 @@ int *createVetor(int tam)
 
     int *v = new int[tam];
 
-    cout << "Gerando " << qtde << " números.";
+    cout << "Gerando " << tam << " números.";
 
-    for (int i = 0; i < qtde; i++)
+    for (int i = 0; i < tam; i++)
     {
         vetor[i] = rand()%1001;
     }
 
     cout << " Pronto!" << endl;
 
-
+    return v;
 
 }
