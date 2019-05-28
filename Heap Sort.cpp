@@ -1,3 +1,18 @@
+#include<iostream>
+#include<windows.h>
+#include<math.h>
+#include<locale.h>
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+
+using namespace std;
+
+void heap(int vetor[], int tam, int i);
+void heapSort(int vetor[], int tam);
+
+
+
 void heap(int vetor[], int tam, int i)
 {
     int largest = i;
