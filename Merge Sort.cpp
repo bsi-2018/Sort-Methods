@@ -1,3 +1,15 @@
+#include<iostream>
+#include<windows.h>
+#include<math.h>
+#include<locale.h>
+#include<chrono>
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<unistd.h>
+
+using namespace std;
+
 void combinar(int *v,int ini,int meio,int fim,int &passos)
 {
     int *VE= new int[meio-ini+1];
@@ -41,7 +53,8 @@ void combinar(int *v,int ini,int meio,int fim,int &passos)
         iv++;
         passos++;
     }
-    cout<< "tempo de execuчуo em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 }
 
 void mergesort(int *vetor, int inicio, int fim, int &passos)
@@ -56,5 +69,6 @@ void mergesort(int *vetor, int inicio, int fim, int &passos)
         combinar (vetor, inicio, metade, fim, passos);
         passos++;
     }
-    cout<< "tempo de execuчуo em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 }
