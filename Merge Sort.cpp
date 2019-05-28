@@ -1,10 +1,3 @@
-#include<iostream>
-#include<random>
-#include<time.h>
-#include<stdlib.h>
-#include<locale.h>
-
-using namespace std;
 
 void combinar(int *v,int ini,int meio,int fim,int &passos){
    int *VE= new int[meio-ini+1];
@@ -55,45 +48,3 @@ void mergesort(int *vetor, int inicio, int fim, int &passos)
     }
 }
 
-int main()
-{
-    setlocale(LC_ALL,"");
-    srand(time(NULL));
-    int qtde;
-
-    cout << "Programa de Teste de Ordenação" << endl
-         << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl
-         << "Quantos números aleatorios devo gerar ? : ";
-    cin >> qtde;
-
-    int *vetor = new int[qtde];
-
-    cout << "Gerando " << qtde << " números.";
-
-    for (int i = 0; i < qtde; i++)
-    {
-        vetor[i] = rand()%1001;
-    }
-
-    cout << " Pronto!" << endl;
-
-    cout << endl << "Números gerados: [";
-    for (int i = 0; i < qtde; i++)
-        cout << vetor[i] << " ";
-    cout << "]" << endl;
-
-    cout << "Ordenando... " << endl;
-
-    int passos = 0;
-    mergesort(vetor, 0, qtde-1, passos);
-
-    cout << passos << " passos." << endl << endl;
-
-    cout << "Vetor final" << endl << "[";
-    for (int i = 0; i < qtde; i++)
-        cout << vetor[i] << " ";
-    cout << "]" << endl;
-
-    delete vetor;
-    return 0;
-}
