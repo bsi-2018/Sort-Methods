@@ -26,6 +26,7 @@ int main()
 
     int *vetor = new int[qtde];
 
+    cout << "Gerando " << qtde << " números.";
 
     for (int i = 0; i < qtde; i++)
     {
