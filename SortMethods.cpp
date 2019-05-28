@@ -37,7 +37,7 @@ int *createVetor(int tam)
 
     for (int i = 0; i < tam; i++)
     {
-        vetor[i] = rand()%1001;
+        v[i] = rand()%1001;
     }
 
     cout << " Pronto!" << endl;
