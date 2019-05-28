@@ -45,8 +45,4 @@ int *createVetor(int tam)
 
     return v;
 
-
-
-
-
 }
