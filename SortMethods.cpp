@@ -20,11 +20,17 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
+    cout <<"Aplicando a ordeção aleatoria:\t"
+    vetorAleatorio();
+
 }
 
 void vetorAleatorio()
 {
-    vetor100()
+    cout <<"vetor com tamanho 100:\n";
+    vetor100();
+
+
 }
 
 void vetor100(){
@@ -35,9 +41,11 @@ void vetor100(){
 
     vetor = createVetor(tam);
 
+
+    cout <<"SelectionSort:\n";
     SelectionSort(vetor,tam);
 
-
+    delete vetor;
 }
 
 int *createVetor(int tam)
@@ -58,5 +66,3 @@ int *createVetor(int tam)
     return v;
 
 }
-
-
