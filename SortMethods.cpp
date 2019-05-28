@@ -9,7 +9,7 @@
 #include"Insertion Sort.cpp."
 #include"Merge Sort.cpp"
 #include"Selection Sort.cpp"
-#include"Shell Sort.cpp"
+//#include"Shell Sort.cpp"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ int main()
 
     vetor = createVetor(tam);
 
-
+    SelectionSort(vetor,tam);
 
 }
 
