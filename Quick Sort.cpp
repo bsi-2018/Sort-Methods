@@ -1,13 +1,3 @@
-#include<iostream>
-#include<random>
-#include<time.h>
-#include<stdlib.h>
-#include<locale.h>
-
-using namespace std;
-
-int qtde=100;
-
 void quicksort(int vetor[], int inicio, int fim)
 {
 	int i, j, pivo, aux;
