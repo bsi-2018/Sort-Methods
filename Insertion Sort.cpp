@@ -1,14 +1,3 @@
-#include<iostream>
-#include<windows.h>
-#include<math.h>
-#include<locale.h>
-#include<string.h>
-#include<stdlib.h>
-#include<stdio.h>
-#include<time.h>
-
-using namespace std;
-
 void insertionSort(int vetor[], int tamanhoVetor) {
 
 int escolhido, j;
