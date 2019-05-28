@@ -33,7 +33,7 @@ int *createVetor(int tam)
 
     int *v = new int[tam];
 
-    cout << "Gerando " << qtde << " números.";
+    cout << "Gerando " << qtde << " nÃºmeros.";
 
     for (int i = 0; i < qtde; i++)
     {
@@ -42,6 +42,6 @@ int *createVetor(int tam)
 
     cout << " Pronto!" << endl;
 
-
-
+    
+    
 }
