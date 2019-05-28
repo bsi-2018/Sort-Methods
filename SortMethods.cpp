@@ -54,7 +54,7 @@ void vetorTam(int tam)
     SelectionSort(vetor,tam);
 
 
-    cout <<"\nrodo.";
+    cout <<"\nrodo.\n";
     delete vetor;
 }
 
