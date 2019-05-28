@@ -13,16 +13,25 @@
 
 using namespace std;
 
+int *createVetor(int tam);
 
 int main()
 {
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
+    int *v, tam;
+
+    v = createVetor(tam);
 
 
 
-    int *vetor = new int[qtde];
+}
+
+int *createVetor(int tam)
+{
+
+    int *v = new int[tam];
 
     cout << "Gerando " << qtde << " números.";
 
@@ -32,12 +41,6 @@ int main()
     }
 
     cout << " Pronto!" << endl;
-
-
-}
-
-int *createVetor()
-{
 
 
 
