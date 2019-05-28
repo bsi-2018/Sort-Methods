@@ -19,10 +19,8 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    int qtde;
 
-    cout << "Defina o tamanho do vetor aleatorio a ser gerado: ";
-    cin >> qtde;
+
 
     int *vetor = new int[qtde];
 
@@ -34,6 +32,13 @@ int main()
     }
 
     cout << " Pronto!" << endl;
+
+
+}
+
+int *createVetor()
+{
+
 
 
 }
