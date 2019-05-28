@@ -14,13 +14,15 @@
 using namespace std;
 
 int *createVetor(int tam);
+void vetorAleatorio();
+void vetorTam(int tam);
 
 int main()
 {
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    cout <<"Aplicando a ordeção aleatoria:\t"
+    cout <<"Aplicando a ordeção aleatoria:\n";
     vetorAleatorio();
 
 }
@@ -28,16 +30,22 @@ int main()
 void vetorAleatorio()
 {
     cout <<"vetor com tamanho 100:\n";
-    vetor100();
+    vetorTam(100);
 
+    cout <<"vetor com tamanho 1000:\n";
+    vetorTam(1000);
 
+    cout <<"vetor com tamanho 100000:\n";
+    vetorTam(100000);
+
+    cout <<"vetor com tamanho 1000000:\n";
+    vetorTam(1000000);
 }
 
-void vetor100(){
+void vetorTam(int tam)
+{
 
-    int *vetor, tam;
-
-    tam = 100;
+    int *vetor;
 
     vetor = createVetor(tam);
 
@@ -45,6 +53,8 @@ void vetor100(){
     cout <<"SelectionSort:\n";
     SelectionSort(vetor,tam);
 
+
+    cout <<"\nrodo.";
     delete vetor;
 }
 
