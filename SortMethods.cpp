@@ -9,7 +9,7 @@
 #include"Insertion Sort.cpp."
 #include"Merge Sort.cpp"
 #include"Selection Sort.cpp"
-//#include"Shell Sort.cpp"
+#include"Shell Sort.cpp"
 
 using namespace std;
 
@@ -20,11 +20,23 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    int *vetor, tam = 10;
+}
+
+void vetorAleatorio()
+{
+    vetor100()
+}
+
+void vetor100(){
+
+    int *vetor, tam;
+
+    tam = 100;
 
     vetor = createVetor(tam);
 
     SelectionSort(vetor,tam);
+
 
 }
 
@@ -40,7 +52,7 @@ int *createVetor(int tam)
         v[i] = rand()%1001;
     }
 
-    cout << " Pronto!" << endl;
+    cout << " Pronto!\n" << endl;
 
 
     return v;
