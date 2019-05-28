@@ -20,7 +20,7 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    int *vetor, tam;
+    int *vetor, tam = 10;
 
     vetor = createVetor(tam);
 
@@ -46,3 +46,5 @@ int *createVetor(int tam)
     return v;
 
 }
+
+
