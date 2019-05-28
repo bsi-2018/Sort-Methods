@@ -1,7 +1,18 @@
+#include<iostream>
+#include<windows.h>
+#include<math.h>
+#include<locale.h>
+#include<chrono>
+#include<string.h>
+#include<stdlib.h>
+#include<stdio.h>
+#include<unistd.h>
 
+using namespace std;
 void SelectionSort(int vetor[], int qtde){
+
     int cont=0;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execução do codigo
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuÑ‡Ñƒo do codigo
     for (int indice = 0; indice < qtde; ++indice) {
         cont++;
         int indiceMenor = indice;
@@ -16,5 +27,6 @@ void SelectionSort(int vetor[], int qtde){
         vetor[indice] = vetor[indiceMenor];
         vetor[indiceMenor] = aux;
     }
-    cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execução do codigo em segundos
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execuÃ§Ã£o do codigo
+    cout<< "tempo de execuÃ§Ã£o em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuÑ‡Ñƒo do codigo em segundos
 }
