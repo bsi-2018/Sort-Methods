@@ -23,6 +23,7 @@ void vetor1000(int *vetor, int tam);
 void vetor100000(int *vetor, int tam);
 void vetor1000000(int *vetor, int tam);
 void vetorAleatorio();
+void vetorCrescente();
 
 int main()
 {
@@ -53,7 +54,7 @@ int main()
         }
         else if(op==2)
         {
-
+            vetorCrescente();
         }
         else if(op==3)
         {
@@ -75,7 +76,7 @@ int main()
 
 void vetorAleatorio()
 {
-    int *vetor, tam[4], passos=0;
+    int *vetor, tam[4];
 
      cout <<"\nAplicando a ordenação aleatória:\n";
 
@@ -110,6 +111,47 @@ void vetorAleatorio()
 
 }
 
+void vetorCrescente()
+{
+    int *vetor, tam[4];
+    long long int cont=0 ,mov = 0;
+
+    cout <<"\nAplicando a ordenação crescente:\n";
+
+    tam[0] = 100;
+    tam[1] = 1000;
+    tam[2] = 100000;
+    tam[3] = 1000000;
+
+    vetor = createVetor(tam[0]);
+    quickSort(vetor,0,tam[0],cont,mov);
+
+    cout <<"\nVetores com tamanho 100:\n";
+    cout <<"============================\n";
+    vetor100(vetor, tam[0]);
+
+    vetor = createVetor(tam[1]);
+    quickSort(vetor,0,tam[1],cont,mov);
+
+    cout <<"\nVetores com tamanho 1000:\n";
+    cout <<"============================\n";
+    vetor1000(vetor, tam[1]);
+
+    vetor = createVetor(tam[2]);
+    quickSort(vetor,0,tam[2],cont,mov);
+    cout <<"\nVetores com tamanho 100000:\n";
+    cout <<"============================\n";
+    vetor100000(vetor, tam[2]);
+
+    vetor = createVetor(tam[3]);
+    quickSort(vetor,0,tam[3],cont,mov);
+
+    cout <<"\nVetores com tamanho 1000000:\n";
+    cout <<"============================\n";
+   // vetor1000000(vetor, tam[3]);
+
+}
+
 void vetor100(int *vetor, int tam){
 
     long long int cont=0 ,mov = 0;
@@ -122,7 +164,7 @@ void vetor100(int *vetor, int tam){
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
     cout <<"\nQuickSort:\n\n";
-    quickSort(copyVetor,0,tam);
+    quickSort(copyVetor,0,tam,cont,mov);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
@@ -157,9 +199,12 @@ void vetor100(int *vetor, int tam){
     cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
+    cont = 0;
+    mov = 0;
+
     copyVetor = vetor;
     cout <<"\nBubbleSort:\n\n";
-    BubbleSort(copyVetor,tam);
+    BubbleSort(copyVetor,tam,cont,mov);
 
 	delete copyVetor;
     delete vetor;
@@ -178,7 +223,7 @@ void vetor1000(int *vetor, int tam){
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
      cout <<"\nQuickSort:\n\n";
-    quickSort(copyVetor,0,tam);
+    quickSort(copyVetor,0,tam,cont,mov);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
@@ -212,9 +257,12 @@ void vetor1000(int *vetor, int tam){
     cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
+    cont = 0;
+    mov = 0;
+
     copyVetor = vetor;
     cout <<"\nBubbleSort:\n\n";
-    BubbleSort(copyVetor,tam);
+    BubbleSort(copyVetor,tam,cont,mov);
 
 	delete copyVetor;
     delete vetor;
@@ -232,7 +280,7 @@ void vetor100000(int *vetor, int tam){
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
      cout <<"\nQuickSort:\n\n";
-    quickSort(copyVetor,0,tam);
+   quickSort(copyVetor,0,tam,cont,mov);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é:: "<<cont<<endl;
@@ -266,9 +314,12 @@ void vetor100000(int *vetor, int tam){
     cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
+    cont = 0;
+    mov = 0;
+
     copyVetor = vetor;
     cout <<"\nBubbleSort:\n\n";
-    BubbleSort(copyVetor,tam);
+    BubbleSort(copyVetor,tam,cont,mov);
 
 	delete copyVetor;
     delete vetor;
@@ -285,8 +336,8 @@ void vetor1000000(int *vetor, int tam){
 
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execução do codigo
     copyVetor = vetor;
-     cout <<"\nQuickSort:\n\n";
-    quickSort(copyVetor,0,tam);
+    cout <<"\nQuickSort:\n\n";
+    quickSort(copyVetor,0,tam,cont,mov);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
@@ -322,10 +373,12 @@ void vetor1000000(int *vetor, int tam){
     cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
+    cont = 0;
+    mov = 0;
+
     copyVetor = vetor;
     cout <<"\nBubbleSort:\n\n";
-    BubbleSort(copyVetor,tam);
-
+    BubbleSort(copyVetor,tam,cont,mov);
 	delete copyVetor;
 }
 
