@@ -6,37 +6,36 @@
 #include<string.h>
 #include<stdlib.h>
 #include<stdio.h>
-#include <algorithm>
 
 using namespace std;
 
 
-void BubbleSort(int vetor[], int MAX)
+void BubbleSort(int vetor[], int tam, long long int &cont, long long int &mov)
 {
-    long long int cont=0, mov=0;
     int aux;
 
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
 
     // percorre todo o vetor
 
-    for(int i=0; i<MAX; i++)
+    for(int i=0; i<tam; i++)
     {
         cont = cont +1;
 
-        for(int j=1; j<MAX; j++)
+        for(int j=1; j<tam; j++)
         {
             cont = cont + 1;
 
             if(vetor[j-1] > vetor[j])
             {
-                cont = cont +1;
-                mov+=3;
+                cont = cont + 1;
                 aux = vetor[j];
+                mov++;
                 vetor[j] = vetor[j-1];
+                mov++;
                 vetor[j-1]=aux;
+                mov++;
             }
-
         }
     }
 
@@ -45,6 +44,4 @@ void BubbleSort(int vetor[], int MAX)
     cout<<"O numero de comparações é: "<<cont<<endl;
     cout<<"O numero de movimentações é: "<<mov<<endl;
 }
-
-
 
