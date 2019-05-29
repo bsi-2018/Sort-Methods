@@ -11,8 +11,8 @@
 using namespace std;
 void quickSort(int vetor[], int inicio, int fim)
 {
-
-	int i, j, pivo, aux, cont=0;
+    long long int cont=0, mov=0;
+	int i, j, pivo, aux;
 	i = inicio;
 	j = fim-1;
 	pivo = vetor[(inicio + fim) / 2];
@@ -31,8 +31,11 @@ void quickSort(int vetor[], int inicio, int fim)
 		if(i <= j)
 		{
 			aux = vetor[i];
-			vetor[i] = vetor[j];
+			mov++;
+            vetor[i] = vetor[j];
+            mov++;
 			vetor[j] = aux;
+			mov++;
 			i++;
 			j--;
 			cont++;
@@ -44,4 +47,8 @@ void quickSort(int vetor[], int inicio, int fim)
 	if(i < fim)
 		quickSort(vetor, i, fim);
 		cont++;
+
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 }
+
