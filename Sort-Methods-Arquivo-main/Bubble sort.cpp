@@ -10,8 +10,6 @@
 
 using namespace std;
 
-void BubbleSort(int vetor[], int MAX);
-
 
 void BubbleSort(int vetor[], int MAX)
 {
@@ -33,7 +31,7 @@ void BubbleSort(int vetor[], int MAX)
             if(vetor[j-1] > vetor[j])
             {
                 cont = cont +1;
-                mov++;
+                mov+=3;
                 aux = vetor[j];
                 vetor[j] = vetor[j-1];
                 vetor[j-1]=aux;
