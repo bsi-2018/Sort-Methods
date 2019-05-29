@@ -12,6 +12,7 @@
 #include"Quick Sort.cpp"
 #include"Heap Sort.cpp."
 #include"Merge Sort.cpp"
+#include"Bubble Sort.cpp"
 
 using namespace std;
 
