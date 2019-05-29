@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<locale.h>
 #include<chrono>
-
+#include<windows.h>
 
 #include"Insertion Sort.cpp" // o nome do cpp pra incluir
 #include"Selection Sort.cpp"
@@ -26,7 +26,7 @@ void vetorAleatorio();
 
 int main()
 {
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL,"portuguese");
     srand(time(NULL));
 
     cout <<"Aplicando a ordenação aleatória:\n";
@@ -67,82 +67,99 @@ void vetorAleatorio()
 
 void vetor100(int *vetor, int tam){
 
+    long long passos=0;
+    int *copyVetor;
 
-    int passos=0, *copyVetor;
+    copyVetor = vetor;
+    cout <<"\nShellSort:\n";
+    shellSort(copyVetor,tam);
+
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"QuickSort:\n";
+    quickSort(copyVetor,0,tam);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"HeapSort:\n";
+    heapSort(copyVetor,tam);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+
+    copyVetor = vetor;
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    cout <<"MergeSort:\n";
+    mergeSort(copyVetor,0,tam-1,passos);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
     cout <<"\nInsertionSort:\n";
     insertionSort(copyVetor,tam);
 
-    cout <<"rodo;";
-
-    //BubbleSort
 
     copyVetor = vetor;
     cout <<"\nSelectionSort:\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
-    shellSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    cout <<"QuickSort:\n";
-    quickSort(copyVetor,0,tam);
-
-    copyVetor = vetor;
-    cout <<"HeapSort:\n";
-    heapSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
-
+    cout <<"\nBubbleSort:\n";
+    BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
     delete vetor;
-
 
 }
 
 void vetor1000(int *vetor, int tam){
 
-    int passos=0, *copyVetor;
+    long long passos=0;
+    int *copyVetor;
+
+    copyVetor = vetor;
+    cout <<"\nShellSort:\n";
+    shellSort(copyVetor,tam);
+
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"QuickSort:\n";
+    quickSort(copyVetor,0,tam);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"HeapSort:\n";
+    heapSort(copyVetor,tam);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+
+    copyVetor = vetor;
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    cout <<"MergeSort:\n";
+    mergeSort(copyVetor,0,tam-1,passos);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
     cout <<"\nInsertionSort:\n";
     insertionSort(copyVetor,tam);
 
+    cout <<"rodo\n";
+
     copyVetor = vetor;
     cout <<"\nSelectionSort:\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
-    shellSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    cout <<"QuickSort:\n";
-    quickSort(copyVetor,0,tam);
-
-
-    copyVetor = vetor;
-    cout <<"HeapSort:\n";
-    heapSort(copyVetor,tam);
-
-
-    copyVetor = vetor;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
-
+    cout <<"\nBubbleSort:\n";
+    BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
     delete vetor;
@@ -150,7 +167,34 @@ void vetor1000(int *vetor, int tam){
 
 void vetor100000(int *vetor, int tam){
 
-    int passos=0, *copyVetor;
+    long long passos=0;
+    int *copyVetor;
+
+    copyVetor = vetor;
+    cout <<"\nShellSort:\n";
+    shellSort(copyVetor,tam);
+
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"QuickSort:\n";
+    quickSort(copyVetor,0,tam);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"HeapSort:\n";
+    heapSort(copyVetor,tam);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+
+    copyVetor = vetor;
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    cout <<"MergeSort:\n";
+    mergeSort(copyVetor,0,tam-1,passos);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
@@ -164,24 +208,8 @@ void vetor100000(int *vetor, int tam){
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
-    shellSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    cout <<"QuickSort:\n";
-    quickSort(copyVetor,0,tam);
-
-    copyVetor = vetor;
-    cout <<"HeapSort:\n";
-    heapSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
-
+    cout <<"\nBubbleSort:\n";
+    BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
     delete vetor;
@@ -189,7 +217,34 @@ void vetor100000(int *vetor, int tam){
 
 void vetor1000000(int *vetor, int tam){
 
-    int passos=0, *copyVetor;
+    long long passos=0;
+    int *copyVetor;
+
+    copyVetor = vetor;
+    cout <<"\nShellSort:\n";
+    shellSort(copyVetor,tam);
+
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"QuickSort:\n";
+    quickSort(copyVetor,0,tam);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    copyVetor = vetor;
+    cout <<"HeapSort:\n";
+    heapSort(copyVetor,tam);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+
+
+    copyVetor = vetor;
+    start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    cout <<"MergeSort:\n";
+    mergeSort(copyVetor,0,tam-1,passos);
+    end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
@@ -203,23 +258,8 @@ void vetor1000000(int *vetor, int tam){
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
-    shellSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    cout <<"QuickSort:\n";
-    quickSort(copyVetor,0,tam);
-
-    copyVetor = vetor;
-    cout <<"HeapSort:\n";
-    heapSort(copyVetor,tam);
-
-    copyVetor = vetor;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
+    cout <<"\nBubbleSort:\n";
+    BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
 }
