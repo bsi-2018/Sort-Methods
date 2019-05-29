@@ -28,7 +28,7 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    cout <<"Aplicando a ordenação aleatória:\t";
+    cout <<"Aplicando a ordenaÃ§Ã£o aleatÃ³ria:\t";
     vetorAleatorio();
 
 }
@@ -67,7 +67,7 @@ void vetor100(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,inicio,fim);
+    quickSort(vetor,0,tam);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -101,7 +101,7 @@ void  vetor1000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,inicio,fim);
+    quickSort(vetor,0,tam);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -134,7 +134,7 @@ void vetor10000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,inicio,fim);
+    quickSort(vetor,0,tam);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -167,7 +167,7 @@ void vetor1000000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,inicio,fim);
+    quickSort(vetor,0,tam);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -184,7 +184,7 @@ int *createVetor(int tam)
 
     int *v = new int[tam];
 
-    cout << "Gerando " << tam << " números.";
+    cout << "Gerando " << tam << " nÃºmeros.";
 
     for (int i = 0; i < tam; i++)
     {
