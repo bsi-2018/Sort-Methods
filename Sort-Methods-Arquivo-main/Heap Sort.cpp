@@ -47,8 +47,8 @@ void heapSort(int vetor[], int tam)
         mov++;
 
         heap(vetor, i, 0);
-
-    cout<<"O numero de comparações é: "<<cont<<endl;
-    cout<<"O numero de movimentações é: "<<mov<<endl;
+    
     }
+    cout<<"O numero de comparaÃ§Ãµes Ã©: "<<cont<<endl;
+    cout<<"O numero de movimentaÃ§Ãµes Ã©: "<<mov<<endl;
 }
