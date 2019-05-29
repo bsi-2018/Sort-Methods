@@ -9,7 +9,7 @@
 #include<unistd.h>
 
 using namespace std;
-void quicksort(int vetor[], int inicio, int fim)
+void quickSort(int vetor[], int inicio, int fim)
 {
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
 	int i, j, pivo, aux, cont=0;
@@ -39,10 +39,10 @@ void quicksort(int vetor[], int inicio, int fim)
 		}
 	}
 	if(j > inicio)
-		quicksort(vetor, inicio, j+1);
+		quickSort(vetor, inicio, j+1);
 		cont++;
 	if(i < fim)
-		quicksort(vetor, i, fim);
+		quickSort(vetor, i, fim);
 		cont++;
 		auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 		cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
