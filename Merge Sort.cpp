@@ -57,15 +57,15 @@ void combinar(int *v,int ini,int meio,int fim,int &passos)
 	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 }
 
-void mergesort(int *vetor, int inicio, int fim, int &passos)
+void mergeSort(int *vetor, int inicio, int fim, int &passos)
 {
     int metade;
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     if (inicio != fim)
     {
         metade = (fim - inicio)/2+inicio;
-        mergesort (vetor, inicio, metade, passos);
-        mergesort (vetor, metade+1, fim, passos);
+        mergeSort (vetor, inicio, metade, passos);
+        mergeSort (vetor, metade+1, fim, passos);
         combinar (vetor, inicio, metade, fim, passos);
         passos++;
     }
