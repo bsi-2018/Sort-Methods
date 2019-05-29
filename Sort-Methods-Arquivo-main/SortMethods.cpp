@@ -29,14 +29,55 @@ int main()
     setlocale(LC_ALL,"portuguese");
     srand(time(NULL));
 
-    cout <<"Aplicando a ordenação aleatória:\n";
-    vetorAleatorio();
+    int op;
+
+    cout <<"==============================================================\n";
+    cout <<"Digite qual operação deseja realizar:\n";
+    cout <<"Operações:\n";
+    cout <<"1 - \t Odernação com vetor aleatório\n";
+    cout <<"2 - \t Odernação com vetor crescente\n";
+    cout <<"3 - \t Odernação com vetor decrescente\n";
+    cout <<"0 - \t Para encerrar o programa\n";
+    cout <<"==============================================================\n";
+ 
+
+
+   while(true)
+    {      
+        cout <<"\nOperador: ";
+        cin >>op;
+        
+        if(op==1)
+        {
+             vetorAleatorio();
+        }
+        else if(op==2)
+        {
+
+        }
+        else if(op==3)
+        {
+
+        }
+        else if(op==0)
+        {
+            break;
+        }
+        else
+        {
+            cout <<"\nOperador invalido\n";
+        }
+
+    }
+    
     return 0;
 }
 
 void vetorAleatorio()
 {
     int *vetor, tam[4], passos=0;
+
+     cout <<"\nAplicando a ordenação aleatória:\n";
 
     tam[0] = 100;
     tam[1] = 1000;
@@ -46,68 +87,78 @@ void vetorAleatorio()
     vetor = createVetor(tam[0]);
 
     cout <<"\nVetores com tamanho 100:\n";
+    cout <<"============================\n";
     vetor100(vetor, tam[0]);
 
     vetor = createVetor(tam[1]);
 
     cout <<"\nVetores com tamanho 1000:\n";
+    cout <<"============================\n";
     vetor1000(vetor, tam[1]);
 
     vetor = createVetor(tam[2]);
 
     cout <<"\nVetores com tamanho 100000:\n";
+    cout <<"============================\n";
     vetor100000(vetor, tam[2]);
 
     vetor = createVetor(tam[3]);
     cout <<"\nVetores com tamanho 1000000:\n";
-    vetor1000000(vetor, tam[3]);
+    cout <<"============================\n";
+   // vetor1000000(vetor, tam[3]);
 
 
 }
 
 void vetor100(int *vetor, int tam){
 
-    long long passos=0;
+    long long int passos=0 ,mov = 0;
     int *copyVetor;
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
+    cout <<"\nShellSort:\n\n";
     shellSort(copyVetor,tam);
 
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"QuickSort:\n";
+    cout <<"\nQuickSort:\n\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"HeapSort:\n";
+    cout <<"\nHeapSort:\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
+    cont = 0; 
+    mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
+    cout <<"\nMergeSort:\n\n";
+    mergeSort(copyVetor,0,tam-1,passos,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     copyVetor = vetor;
 
-    cout <<"\nInsertionSort:\n";
+    cout <<"\nInsertionSort:\n\n";
     insertionSort(copyVetor,tam);
 
 
     copyVetor = vetor;
-    cout <<"\nSelectionSort:\n";
+    cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nBubbleSort:\n";
+    cout <<"\nBubbleSort:\n\n";
     BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
@@ -121,44 +172,48 @@ void vetor1000(int *vetor, int tam){
     int *copyVetor;
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
+    cout <<"\nShellSort:\n\n";
     shellSort(copyVetor,tam);
 
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"QuickSort:\n";
+     cout <<"\nQuickSort:\n\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"HeapSort:\n";
+    cout <<"\nHeapSort:\n\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
+    cont = 0; 
+    mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
+    cout <<"\nMergeSort:\n\n";
+    mergeSort(copyVetor,0,tam-1,passos,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é:: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     copyVetor = vetor;
 
-    cout <<"\nInsertionSort:\n";
+    cout <<"\nInsertionSort:\n\n";
     insertionSort(copyVetor,tam);
 
-    cout <<"rodo\n";
-
     copyVetor = vetor;
-    cout <<"\nSelectionSort:\n";
+    cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nBubbleSort:\n";
+    cout <<"\nBubbleSort:\n\n";
     BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
@@ -171,44 +226,48 @@ void vetor100000(int *vetor, int tam){
     int *copyVetor;
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
+    cout <<"\nShellSort:\n\n";
     shellSort(copyVetor,tam);
 
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"QuickSort:\n";
+     cout <<"\nQuickSort:\n\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é:: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"HeapSort:\n";
+    cout <<"\nHeapSort:\n\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
+    cont = 0; 
+    mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
+    cout <<"\nMergeSort:\n\n";
+    mergeSort(copyVetor,0,tam-1,passos,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     copyVetor = vetor;
 
-    cout <<"\nInsertionSort:\n";
+    cout <<"\nInsertionSort:\n\n";
     insertionSort(copyVetor,tam);
 
-    cout <<"rodo\n";
-
     copyVetor = vetor;
-    cout <<"\nSelectionSort:\n";
+    cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nBubbleSort:\n";
+    cout <<"\nBubbleSort:\n\n";
     BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
@@ -221,44 +280,50 @@ void vetor1000000(int *vetor, int tam){
     int *copyVetor;
 
     copyVetor = vetor;
-    cout <<"\nShellSort:\n";
+    cout <<"\nShellSort:\n\n";
     shellSort(copyVetor,tam);
 
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execução do codigo
     copyVetor = vetor;
-    cout <<"QuickSort:\n";
+     cout <<"\nQuickSort:\n\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
-    cout <<"HeapSort:\n";
+    cout <<"HeapSort:\n\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
+    cont = 0; 
+    mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
-    cout <<"MergeSort:\n";
-    mergeSort(copyVetor,0,tam-1,passos);
+    cout <<"\nMergeSort:\n\n";
+    mergeSort(copyVetor,0,tam-1,passos,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout<<"O numero de comparações é: "<<cont<<endl;
+    cout<<"O numero de movimentações é: "<<mov<<endl;
 
     copyVetor = vetor;
 
-    cout <<"\nInsertionSort:\n";
+    cout <<"\nInsertionSort:\n\n";
     insertionSort(copyVetor,tam);
 
     cout <<"rodo\n";
 
     copyVetor = vetor;
-    cout <<"\nSelectionSort:\n";
+    cout <<"\nSelectionSort:\n\n";
     selectionSort(copyVetor,tam);
 
     copyVetor = vetor;
-    cout <<"\nBubbleSort:\n";
+    cout <<"\nBubbleSort:\n\n";
     BubbleSort(copyVetor,tam);
 
 	delete copyVetor;
@@ -276,7 +341,7 @@ int *createVetor(int tam)
         v[i] = rand()%1001;
     }
 
-    cout << " Pronto!\n" << endl;
+    cout << " Pronto!\n";
 
 
     return v;
