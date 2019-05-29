@@ -35,6 +35,7 @@ void combinar(int *v,int ini,int meio,int fim,int &passos)
         {
             v[iv]=VD[id];
             id++;
+            
         }
         iv++;
         passos++;
