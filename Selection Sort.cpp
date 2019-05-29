@@ -9,7 +9,7 @@
 #include<unistd.h>
 
 using namespace std;
-void SelectionSort(int vetor[], int qtde){
+void selectionSort(int vetor[], int qtde){
 
     int cont=0;
     auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
