@@ -43,8 +43,7 @@ void BubbleSort(int vetor[], int MAX)
     }
 
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
-
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
     cout<<"O numero de movimentações é: "<<mov<<endl;
 }
