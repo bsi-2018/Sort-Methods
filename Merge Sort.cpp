@@ -14,7 +14,7 @@ void combinar(int *v,int ini,int meio,int fim,int &passos)
 {
     int *VE= new int[meio-ini+1];
     int *VD= new int[fim-meio];
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    
     for (int i=0; i<meio-ini+1; i++)
     {
         VE[i]= v[ini+i];
@@ -53,14 +53,13 @@ void combinar(int *v,int ini,int meio,int fim,int &passos)
         iv++;
         passos++;
     }
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
+   
 }
 
 void mergeSort(int *vetor, int inicio, int fim, int &passos)
 {
     int metade;
-    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
+    
     if (inicio != fim)
     {
         metade = (fim - inicio)/2+inicio;
@@ -69,6 +68,5 @@ void mergeSort(int *vetor, int inicio, int fim, int &passos)
         combinar (vetor, inicio, metade, fim, passos);
         passos++;
     }
-    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
+    
 }
