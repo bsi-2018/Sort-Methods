@@ -75,8 +75,11 @@ void vetor100(){
     heapSort(vetor,tam);
 
     vetor = createVetor(tam);
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"MergeSort:\n";
     mergeSort(vetor,0,tam-1,passos);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 
 
     delete vetor;
@@ -109,8 +112,11 @@ void  vetor1000(){
     heapSort(vetor,tam);
 
     vetor = createVetor(tam);
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"MergeSort:\n";
     mergeSort(vetor,0,tam-1,passos);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 
     delete vetor;
 }
@@ -142,8 +148,11 @@ void vetor10000(){
     heapSort(vetor,tam);
 
     vetor = createVetor(tam);
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"MergeSort:\n";
     mergeSort(vetor,0,tam-1,passos);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 
     delete vetor;
 }
@@ -175,8 +184,11 @@ void vetor1000000(){
     heapSort(vetor,tam);
 
     vetor = createVetor(tam);
+    auto start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"MergeSort:\n";
     mergeSort(vetor,0,tam-1,passos);
+    auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
+	cout<< "tempo de execução em segundos: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"S"<<endl;//retorno do comando para medir o tempo de execuчуo do codigo em segundos
 
     delete vetor;
 }
