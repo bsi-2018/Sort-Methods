@@ -50,7 +50,7 @@ void vetorAleatorio()
 
 void vetor100(){
 
-    int *vetor, tam;
+    int *vetor, tam, passos=0;
 
     tam = 100;
 
@@ -76,7 +76,7 @@ void vetor100(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,tam-1);
+    mergeSort(vetor,0,tam-1,passos);
 
 
     delete vetor;
@@ -84,7 +84,7 @@ void vetor100(){
 
 void  vetor1000(){
 
-    int *vetor, tam;
+    int *vetor, tam, passos=0;
 
     tam = 1000;
 
@@ -110,14 +110,14 @@ void  vetor1000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,tam-1);
+    mergeSort(vetor,0,tam-1,passos);
 
     delete vetor;
 }
 
 void vetor10000(){
 
-    int *vetor, tam;
+    int *vetor, tam, passos=0;
 
     tam = 10000;
 
@@ -143,14 +143,14 @@ void vetor10000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,tam-1);
+    mergeSort(vetor,0,tam-1,passos);
 
     delete vetor;
 }
 
 void vetor1000000(){
 
-    int *vetor, tam;
+    int *vetor, tam, passos=0;
 
     tam = 1000000;
 
@@ -176,7 +176,7 @@ void vetor1000000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,tam-1);
+    mergeSort(vetor,0,tam-1,passos);
 
     delete vetor;
 }
