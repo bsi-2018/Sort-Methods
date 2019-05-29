@@ -6,7 +6,7 @@
 #include<chrono>
 #include<windows.h>
 
-#include"Insertion Sort.cpp" 
+#include"Insertion Sort.cpp"
 #include"Selection Sort.cpp"
 #include"Shell Sort.cpp"
 #include"Quick Sort.cpp"
@@ -26,7 +26,7 @@ void vetorAleatorio();
 
 int main()
 {
-    setlocale(LC_ALL,"portuguese");
+    setlocale(LC_ALL,"");
     srand(time(NULL));
 
     int op;
@@ -34,19 +34,19 @@ int main()
     cout <<"==============================================================\n";
     cout <<"Digite qual operação deseja realizar:\n";
     cout <<"Operações:\n";
-    cout <<"1 - \t Odernação com vetor aleatório\n";
-    cout <<"2 - \t Odernação com vetor crescente\n";
-    cout <<"3 - \t Odernação com vetor decrescente\n";
-    cout <<"0 - \t Para encerrar o programa\n";
+    cout <<"1 - \t Odernação com vetor aleatório.\n";
+    cout <<"2 - \t Odernação com vetor crescente.\n";
+    cout <<"3 - \t Odernação com vetor decrescente.\n";
+    cout <<"0 - \t Para encerrar o programa.\n";
     cout <<"==============================================================\n";
- 
+
 
 
    while(true)
-    {      
+    {
         cout <<"\nOperador: ";
         cin >>op;
-        
+
         if(op==1)
         {
              vetorAleatorio();
@@ -69,7 +69,7 @@ int main()
         }
 
     }
-    
+
     return 0;
 }
 
@@ -112,7 +112,7 @@ void vetorAleatorio()
 
 void vetor100(int *vetor, int tam){
 
-    long long int passos=0 ,mov = 0;
+    long long int cont=0 ,mov = 0;
     int *copyVetor;
 
     copyVetor = vetor;
@@ -135,13 +135,13 @@ void vetor100(int *vetor, int tam){
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
-    cont = 0; 
+    cont = 0;
     mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"\nMergeSort:\n\n";
-    mergeSort(copyVetor,0,tam-1,passos,mov);
+    mergeSort(copyVetor,0,tam-1,cont,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
@@ -168,7 +168,7 @@ void vetor100(int *vetor, int tam){
 
 void vetor1000(int *vetor, int tam){
 
-    long long passos=0;
+    long long int cont=0 ,mov = 0;
     int *copyVetor;
 
     copyVetor = vetor;
@@ -191,13 +191,13 @@ void vetor1000(int *vetor, int tam){
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
-    cont = 0; 
+    cont = 0;
     mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"\nMergeSort:\n\n";
-    mergeSort(copyVetor,0,tam-1,passos,mov);
+    mergeSort(copyVetor,0,tam-1,cont,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é:: "<<cont<<endl;
@@ -222,7 +222,7 @@ void vetor1000(int *vetor, int tam){
 
 void vetor100000(int *vetor, int tam){
 
-    long long passos=0;
+    long long int cont=0 ,mov = 0;
     int *copyVetor;
 
     copyVetor = vetor;
@@ -245,13 +245,13 @@ void vetor100000(int *vetor, int tam){
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
-    cont = 0; 
+    cont = 0;
     mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"\nMergeSort:\n\n";
-    mergeSort(copyVetor,0,tam-1,passos,mov);
+    mergeSort(copyVetor,0,tam-1,cont,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
@@ -276,7 +276,7 @@ void vetor100000(int *vetor, int tam){
 
 void vetor1000000(int *vetor, int tam){
 
-    long long passos=0;
+    long long int cont=0 ,mov = 0;
     int *copyVetor;
 
     copyVetor = vetor;
@@ -299,13 +299,13 @@ void vetor1000000(int *vetor, int tam){
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
     cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
-    cont = 0; 
+    cont = 0;
     mov = 0;
 
     copyVetor = vetor;
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     cout <<"\nMergeSort:\n\n";
-    mergeSort(copyVetor,0,tam-1,passos,mov);
+    mergeSort(copyVetor,0,tam-1,cont,mov);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
 	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
     cout<<"O numero de comparações é: "<<cont<<endl;
