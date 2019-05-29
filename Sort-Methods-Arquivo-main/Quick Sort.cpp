@@ -9,10 +9,9 @@
 #include<unistd.h>
 
 using namespace std;
-void quickSort(int vetor[], int inicio, int fim)
+void quickSort(int vetor[], int inicio, int fim, long long int &cont, long long int &mov)
 {
-    long long int cont=0, mov=0;
-	int i, j, pivo, aux;
+    int i, j, pivo, aux;
 	i = inicio;
 	j = fim-1;
 	pivo = vetor[(inicio + fim) / 2];
@@ -42,12 +41,11 @@ void quickSort(int vetor[], int inicio, int fim)
 		}
 	}
 	if(j > inicio)
-		quickSort(vetor, inicio, j+1);
+		quickSort(vetor, inicio, j+1, cont, mov);
 		cont++;
 	if(i < fim)
-		quickSort(vetor, i, fim);
+		quickSort(vetor, i, fim, cont, mov);
 		cont++;
 
-    
-}
 
+}
