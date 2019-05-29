@@ -10,9 +10,7 @@
 
 using namespace std;
 
-long long int cont=0, mov=0;
-
-void combinar(int *v,int ini,int meio,int fim)
+void combinar(int *v,int ini,int meio,int fim, long long int &cont, long long int &mov)
 {
     int *VE= new int[meio-ini+1];
     int *VD= new int[fim-meio];
@@ -63,20 +61,17 @@ void combinar(int *v,int ini,int meio,int fim)
 
 }
 
-void mergeSort(int *vetor, int inicio, int fim)
+void mergeSort(int *vetor, int inicio, int fim, long long int &cont, long long int &mov)
 {
     int metade;
 
     if (inicio != fim)
     {
         metade = (fim - inicio)/2+inicio;
-        mergeSort (vetor, inicio, metade);
-        mergeSort (vetor, metade+1, fim);
-        combinar (vetor, inicio, metade, fim);
+        mergeSort (vetor, inicio, metade, cont, mov);
+        mergeSort (vetor, metade+1, fim, cont, mov);
+        combinar (vetor, inicio, metade, fim, cont, mov);
         cont++;
     }
-
-    cout<<"O numero de comparações é: "<<cont<<endl;
-    cout<<"O numero de movimentações é: "<<mov<<endl;
 
 }
