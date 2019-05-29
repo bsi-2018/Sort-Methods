@@ -76,7 +76,7 @@ void vetor100(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,qtde-1,passos);
+    mergeSort(vetor,0,tam-1);
 
 
     delete vetor;
@@ -110,7 +110,7 @@ void  vetor1000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,qtde-1,passos);
+    mergeSort(vetor,0,tam-1);
 
     delete vetor;
 }
@@ -143,7 +143,7 @@ void vetor10000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,qtde-1,passos);
+    mergeSort(vetor,0,tam-1);
 
     delete vetor;
 }
@@ -176,7 +176,7 @@ void vetor1000000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,0,qtde-1,passos);
+    mergeSort(vetor,0,tam-1);
 
     delete vetor;
 }
