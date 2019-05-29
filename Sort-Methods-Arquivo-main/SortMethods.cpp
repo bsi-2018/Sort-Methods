@@ -6,7 +6,7 @@
 #include<chrono>
 #include<windows.h>
 
-#include"Insertion Sort.cpp" // o nome do cpp pra incluir
+#include"Insertion Sort.cpp" 
 #include"Selection Sort.cpp"
 #include"Shell Sort.cpp"
 #include"Quick Sort.cpp"
@@ -79,14 +79,14 @@ void vetor100(int *vetor, int tam){
     cout <<"QuickSort:\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
     cout <<"HeapSort:\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
 
     copyVetor = vetor;
@@ -94,7 +94,7 @@ void vetor100(int *vetor, int tam){
     cout <<"MergeSort:\n";
     mergeSort(copyVetor,0,tam-1,passos);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
@@ -129,14 +129,14 @@ void vetor1000(int *vetor, int tam){
     cout <<"QuickSort:\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
     cout <<"HeapSort:\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
 
     copyVetor = vetor;
@@ -144,7 +144,7 @@ void vetor1000(int *vetor, int tam){
     cout <<"MergeSort:\n";
     mergeSort(copyVetor,0,tam-1,passos);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
@@ -179,14 +179,14 @@ void vetor100000(int *vetor, int tam){
     cout <<"QuickSort:\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
     cout <<"HeapSort:\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
 
     copyVetor = vetor;
@@ -194,7 +194,7 @@ void vetor100000(int *vetor, int tam){
     cout <<"MergeSort:\n";
     mergeSort(copyVetor,0,tam-1,passos);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
@@ -229,14 +229,14 @@ void vetor1000000(int *vetor, int tam){
     cout <<"QuickSort:\n";
     quickSort(copyVetor,0,tam);
     auto end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     start = chrono::steady_clock::now(); //comando para medir o tempo de execuчуo do codigo
     copyVetor = vetor;
     cout <<"HeapSort:\n";
     heapSort(copyVetor,tam);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-    cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+    cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
 
     copyVetor = vetor;
@@ -244,7 +244,7 @@ void vetor1000000(int *vetor, int tam){
     cout <<"MergeSort:\n";
     mergeSort(copyVetor,0,tam-1,passos);
     end = chrono::steady_clock::now();//comando para medir o tempo de execução do codigo
-	cout <<"tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
+	cout <<"Tempo de execução: "<<chrono::duration_cast<chrono::seconds>(end - start).count()<<"s " <<chrono::duration_cast<chrono::milliseconds>(end - start).count()<<"ms "<<chrono::duration_cast<chrono::nanoseconds>(end - start).count()<<"ns " <<endl;
 
     copyVetor = vetor;
 
