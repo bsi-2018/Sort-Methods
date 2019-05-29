@@ -26,7 +26,7 @@ void vetorAleatorio();
 
 int main()
 {
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL,"portuguese");
     srand(time(NULL));
 
     int op;
