@@ -48,7 +48,6 @@ void quickSort(int vetor[], int inicio, int fim)
 		quickSort(vetor, i, fim);
 		cont++;
 
-    cout<<"O numero de comparações é: "<<cont<<endl;
-    cout<<"O numero de movimentações é: "<<mov<<endl;
+    
 }
 
