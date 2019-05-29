@@ -67,7 +67,7 @@ void vetor100(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,0,tam);
+    quickSort(vetor,0,fim);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -75,7 +75,7 @@ void vetor100(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,inicio,fim,passos);
+    mergeSort(vetor,0,qtde-1,passos);
 
 
     delete vetor;
@@ -101,7 +101,7 @@ void  vetor1000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,0,tam);
+    quickSort(vetor,0,fim);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -109,7 +109,7 @@ void  vetor1000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,inicio,fim,passos);
+    mergeSort(vetor,0,qtde-1,passos);
 
     delete vetor;
 }
@@ -134,7 +134,7 @@ void vetor10000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,0,tam);
+    quickSort(vetor,0,fim);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -142,7 +142,7 @@ void vetor10000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,inicio,fim,passos);
+    mergeSort(vetor,0,qtde-1,passos);
 
     delete vetor;
 }
@@ -167,7 +167,7 @@ void vetor1000000(){
 
     vetor = createVetor(tam);
     cout <<"QuickSort:\n";
-    quickSort(vetor,0,tam);
+    quickSort(vetor,0,fim);
 
     vetor = createVetor(tam);
     cout <<"HeapSort:\n";
@@ -175,7 +175,7 @@ void vetor1000000(){
 
     vetor = createVetor(tam);
     cout <<"MergeSort:\n";
-    mergeSort(vetor,inicio,fim,passos);
+    mergeSort(vetor,0,qtde-1,passos);
 
     delete vetor;
 }
