@@ -5,12 +5,13 @@
 #include<locale.h>
 #include<chrono>
 
-#include"Quick Sort.cpp" // o nome do cpp pra inclu
-#include"Heap Sort.cpp."
-#include"Insertion Sort.cpp."
-#include"Merge Sort.cpp"
+
+#include"Insertion Sort.cpp." // o nome do cpp pra incluir
 #include"Selection Sort.cpp"
 #include"Shell Sort.cpp"
+#include"Quick Sort.cpp"
+#include"Heap Sort.cpp."
+#include"Merge Sort.cpp"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ int main()
     setlocale(LC_ALL,"");
     srand(time(NULL));
 
-    cout <<"Aplicando a ordeção aleatoria:\t";
+    cout <<"Aplicando a ordenação aleatória:\t";
     vetorAleatorio();
 
 }
@@ -53,10 +54,29 @@ void vetor100(){
     tam = 100;
 
     vetor = createVetor(tam);
-
-
-    cout <<"SelectionSort:\n";
+    cout <<"InsertionSort:\n";
     insertionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"SelectionSort:\n";
+    selectionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"ShellSort:\n";
+    shellSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"QuickSort:\n";
+    quickSort(vetor,inicio,fim);
+
+    vetor = createVetor(tam);
+    cout <<"HeapSort:\n";
+    heapSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"MergeSort:\n";
+    mergeSort(vetor,inicio,fim,passos);
+
 
     delete vetor;
 }
@@ -68,10 +88,28 @@ void  vetor1000(){
     tam = 1000;
 
     vetor = createVetor(tam);
-
-
-    cout <<"SelectionSort:\n";
+    cout <<"InsertionSort:\n";
     insertionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"SelectionSort:\n";
+    selectionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"ShellSort:\n";
+    shellSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"QuickSort:\n";
+    quickSort(vetor,inicio,fim);
+
+    vetor = createVetor(tam);
+    cout <<"HeapSort:\n";
+    heapSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"MergeSort:\n";
+    mergeSort(vetor,inicio,fim,passos);
 
     delete vetor;
 }
@@ -83,10 +121,28 @@ void vetor10000(){
     tam = 10000;
 
     vetor = createVetor(tam);
-
-
-    cout <<"SelectionSort:\n";
+    cout <<"InsertionSort:\n";
     insertionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"SelectionSort:\n";
+    selectionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"ShellSort:\n";
+    shellSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"QuickSort:\n";
+    quickSort(vetor,inicio,fim);
+
+    vetor = createVetor(tam);
+    cout <<"HeapSort:\n";
+    heapSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"MergeSort:\n";
+    mergeSort(vetor,inicio,fim,passos);
 
     delete vetor;
 }
@@ -98,10 +154,28 @@ void vetor1000000(){
     tam = 1000000;
 
     vetor = createVetor(tam);
-
-
-    cout <<"SelectionSort:\n";
+    cout <<"InsertionSort:\n";
     insertionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"SelectionSort:\n";
+    selectionSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"ShellSort:\n";
+    shellSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"QuickSort:\n";
+    quickSort(vetor,inicio,fim);
+
+    vetor = createVetor(tam);
+    cout <<"HeapSort:\n";
+    heapSort(vetor,tam);
+
+    vetor = createVetor(tam);
+    cout <<"MergeSort:\n";
+    mergeSort(vetor,inicio,fim,passos);
 
     delete vetor;
 }
