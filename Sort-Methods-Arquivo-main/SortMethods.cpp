@@ -14,7 +14,7 @@
 #include"Merge Sort.cpp"
 #include"Bubble Sort.cpp"
 #include"Crescente.cpp"
-
+#include"Decrescente.cpp"
 
 using namespace std;
 
@@ -61,7 +61,7 @@ int main()
         }
         else if(op==3)
         {
-
+            vetorDecrescente();
         }
         else if(op==0)
         {
@@ -89,7 +89,7 @@ void vetorAleatorio()
     tam[3] = 1000000;
 
     vetor = createVetor(tam[0]);
-    
+
     cout <<"\nVetores com tamanho 100:\n";
     cout <<"============================\n";
     vetor100(vetor, tam[0]);
@@ -127,28 +127,28 @@ void vetorCrescente()
     tam[3] = 1000000;
 
     vetor = createVetor(tam[0]);
-    shellSort2(vetor,tam[0]);
+    vetor = shellSort2(vetor,tam[0]);
 
     cout <<"\nVetores com tamanho 100:\n";
     cout <<"============================\n";
     vetor100(vetor, tam[0]);
 
     vetor = createVetor(tam[1]);
-    shellSort2(vetor,tam[1]);
+    vetor = shellSort2(vetor,tam[1]);
 
     cout <<"\nVetores com tamanho 1000:\n";
     cout <<"============================\n";
     vetor1000(vetor, tam[1]);
 
     vetor = createVetor(tam[2]);
-    shellSort2(vetor,tam[2]);
+    vetor = shellSort2(vetor,tam[2]);
 
     cout <<"\nVetores com tamanho 100000:\n";
     cout <<"============================\n";
     vetor100000(vetor, tam[2]);
 
     vetor = createVetor(tam[3]);
-    shellSort2(vetor,tam[3]);
+    vetor = shellSort2(vetor,tam[3]);
 
     cout <<"\nVetores com tamanho 1000000:\n";
     cout <<"============================\n";
@@ -156,7 +156,7 @@ void vetorCrescente()
 
 }
 
-void vetorCrescente()
+void vetorDecrescente()
 {
     int *vetor, tam[4];
     long long int cont=0 ,mov = 0;
@@ -169,27 +169,27 @@ void vetorCrescente()
     tam[3] = 1000000;
 
     vetor = createVetor(tam[0]);
-    vetor = quickSort(vetor,0,tam[0],cont,mov);
-    inverte
+    vetor = inverter(vetor,tam[0]);
+
     cout <<"\nVetores com tamanho 100:\n";
     cout <<"============================\n";
     vetor100(vetor, tam[0]);
 
     vetor = createVetor(tam[1]);
-    quickSort(vetor,0,tam[1],cont,mov);
+    vetor = inverter(vetor,tam[1]);
 
     cout <<"\nVetores com tamanho 1000:\n";
     cout <<"============================\n";
     vetor1000(vetor, tam[1]);
 
     vetor = createVetor(tam[2]);
-    quickSort(vetor,0,tam[2],cont,mov);
+    vetor = inverter(vetor,tam[2]);
     cout <<"\nVetores com tamanho 100000:\n";
     cout <<"============================\n";
     vetor100000(vetor, tam[2]);
 
     vetor = createVetor(tam[3]);
-    quickSort(vetor,0,tam[3],cont,mov);
+    vetor = inverter(vetor,tam[3]);
 
     cout <<"\nVetores com tamanho 1000000:\n";
     cout <<"============================\n";
