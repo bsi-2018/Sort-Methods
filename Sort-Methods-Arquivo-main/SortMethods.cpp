@@ -412,11 +412,9 @@ void vetor1000000(int *vetor, int tam){
     cout <<"\nInsertionSort:\n\n";
     insertionSort(copyVetor,tam);
 
-    cout <<"rodo\n";
-
     copyVetor = vetor;
     cout <<"\nSelectionSort:\n\n";
-    //selectionSort(copyVetor,tam);
+    selectionSort(copyVetor,tam);
 
     cont = 0;
     mov = 0;
