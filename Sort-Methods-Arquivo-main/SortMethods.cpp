@@ -13,6 +13,8 @@
 #include"Heap Sort.cpp"
 #include"Merge Sort.cpp"
 #include"Bubble Sort.cpp"
+#include"Crescente.cpp"
+
 
 using namespace std;
 
@@ -24,6 +26,7 @@ void vetor100000(int *vetor, int tam);
 void vetor1000000(int *vetor, int tam);
 void vetorAleatorio();
 void vetorCrescente();
+void vetorDecrescente();
 
 int main()
 {
@@ -86,7 +89,7 @@ void vetorAleatorio()
     tam[3] = 1000000;
 
     vetor = createVetor(tam[0]);
-
+    
     cout <<"\nVetores com tamanho 100:\n";
     cout <<"============================\n";
     vetor100(vetor, tam[0]);
@@ -106,7 +109,7 @@ void vetorAleatorio()
     vetor = createVetor(tam[3]);
     cout <<"\nVetores com tamanho 1000000:\n";
     cout <<"============================\n";
-   // vetor1000000(vetor, tam[3]);
+    vetor1000000(vetor, tam[3]);
 
 
 }
@@ -124,8 +127,50 @@ void vetorCrescente()
     tam[3] = 1000000;
 
     vetor = createVetor(tam[0]);
-    quickSort(vetor,0,tam[0],cont,mov);
+    shellSort2(vetor,tam[0]);
 
+    cout <<"\nVetores com tamanho 100:\n";
+    cout <<"============================\n";
+    vetor100(vetor, tam[0]);
+
+    vetor = createVetor(tam[1]);
+    shellSort2(vetor,tam[1]);
+
+    cout <<"\nVetores com tamanho 1000:\n";
+    cout <<"============================\n";
+    vetor1000(vetor, tam[1]);
+
+    vetor = createVetor(tam[2]);
+    shellSort2(vetor,tam[2]);
+
+    cout <<"\nVetores com tamanho 100000:\n";
+    cout <<"============================\n";
+    vetor100000(vetor, tam[2]);
+
+    vetor = createVetor(tam[3]);
+    shellSort2(vetor,tam[3]);
+
+    cout <<"\nVetores com tamanho 1000000:\n";
+    cout <<"============================\n";
+    vetor1000000(vetor, tam[3]);
+
+}
+
+void vetorCrescente()
+{
+    int *vetor, tam[4];
+    long long int cont=0 ,mov = 0;
+
+    cout <<"\nAplicando a ordenação crescente:\n";
+
+    tam[0] = 100;
+    tam[1] = 1000;
+    tam[2] = 100000;
+    tam[3] = 1000000;
+
+    vetor = createVetor(tam[0]);
+    vetor = quickSort(vetor,0,tam[0],cont,mov);
+    inverte
     cout <<"\nVetores com tamanho 100:\n";
     cout <<"============================\n";
     vetor100(vetor, tam[0]);
@@ -148,7 +193,7 @@ void vetorCrescente()
 
     cout <<"\nVetores com tamanho 1000000:\n";
     cout <<"============================\n";
-   // vetor1000000(vetor, tam[3]);
+    vetor1000000(vetor, tam[3]);
 
 }
 
@@ -371,7 +416,7 @@ void vetor1000000(int *vetor, int tam){
 
     copyVetor = vetor;
     cout <<"\nSelectionSort:\n\n";
-    selectionSort(copyVetor,tam);
+    //selectionSort(copyVetor,tam);
 
     cont = 0;
     mov = 0;
