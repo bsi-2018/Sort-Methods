@@ -9,8 +9,7 @@
 
 using namespace std;
 
-
-void BubbleSort(int vetor[], int tam, long long int &cont, long long int &mov)
+void BubbleSort(int vetor[], int tam, long long int &cont, long long int mov)
 {
     int aux;
 
@@ -44,4 +43,3 @@ void BubbleSort(int vetor[], int tam, long long int &cont, long long int &mov)
     cout<<"O numero de comparações é: "<<cont<<endl;
     cout<<"O numero de movimentações é: "<<mov<<endl;
 }
-
